@@ -30,6 +30,14 @@ omcgroup = node.default['omc']['group']
       action :create
   end
 end
+
+ directory  "/home/oracle/scripts" do
+    owner "oracle"
+    group "oinstall"
+    mode "0755"
+    action :create
+  end
+
  
  directory  "/home/oracle/scripts/odo" do
     owner "oracle"
@@ -38,7 +46,7 @@ end
     action :create
   end
 
-  omc_script_list [add_odocampaign.sh, add_odoengineasap.sh, add_odoenginedbinstance.sh, add_odoengineosm.sh, add_odoengine.sh, collect_metrics.sh, collect_status.sh, create_odoentities.sh,  odoengine_capacity.sh,  prereq_scripts.sh]
+  omc_script_list  = ['add_odocampaign.sh', 'add_odoengineasap.sh', 'add_odoenginedbinstance.sh', 'add_odoengineosm.sh', 'add_odoengine.sh', 'collect_metrics.sh', 'collect_status.sh', 'create_odoentities.sh',  'odoengine_capacity.sh',  'prereq_scripts.sh']
 
   omc_script_list.each  do |omcscripts| 
     template "/home/oracle/scripts/odo/#{omcscripts}" do
@@ -49,6 +57,20 @@ end
       action :create
     end
   end
+
+  execute "omc_scripts" do
+    user "oracle"
+    group "oinstall"
+    cwd '/home/oracle/scripts/odo/'
+    command  <<-EOH
+            source /home/oracle/.bash_profile
+            source /home/oracle/.bashrc
+            source /home/oracle/ASAP72061/Environment_Profile
+            prereq_scripts.sh 
+            create_odoentities.sh
+         EOH
+   end
+
 ['AgentInstall.sh', 'lama.zip'].each do |cbfiles| 
   cookbook_file node.default['omc']['base_dir'] + "/#{cbfiles}" do
     source "#{cbfiles}"
