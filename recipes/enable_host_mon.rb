@@ -9,7 +9,8 @@ template "#{json}" do
   group "#{omcgroup}"
   source 'host_mon.erb'
   variables({ :hosttype => 'omc_host_linux',
-              :hostname =>  "#{node['hostname'] 
+              :hostname =>  node['hostname'],
+              :campaign => node.default['campaign_name'] 
   	 })
   notifies :run, 'execute[call_omcli_host_agent]'
 end
