@@ -1,4 +1,5 @@
-y() {
+#!/bin/bash
+getArray() {
     array=() # Create array
     while IFS= read -r line # Read a line
     do
@@ -10,16 +11,11 @@ getArray "./odomeIds"
 declare -A ary
 for line in "${array[@]}"
 do
-#    arrIN+=(${e//=/ })
      key=${line%%=*}
      value=${line#*=}
      ary[$key]=$value
 done
 
-for e in "${ary[odocampaign_meId]}"
-do
-    echo "$e"
-done
 #
 # curl command to mark DB down
 #
