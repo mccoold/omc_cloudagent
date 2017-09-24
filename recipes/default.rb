@@ -46,7 +46,7 @@ end
     action :create
   end
 
-  omc_script_list  = ['add_odocampaign.sh', 'add_odoengineasap.sh', 'add_odoenginedbinstance.sh', 'add_odoengineosm.sh', 'add_odoengine.sh', 'collect_metrics.sh', 'collect_status.sh', 'create_odoentities.sh',  'odoengine_capacity.sh',  'prereq_scripts.sh', 'odoengine_capacity_orderids.sql', 'odoengine_capacity_tablespace.sql', 'odoengine_metric_ordersummary.sql', 'odoengine_metric_partition_count.sql', 'prereq_db_directory.sql']
+  omc_script_list  = ['add_odocampaign.sh', 'kill.sh', 'add_odoengineasap.sh', 'add_odoenginedbinstance.sh', 'add_odoengineosm.sh', 'add_odoengine.sh', 'collect_metrics.sh', 'collect_status.sh', 'create_odoentities.sh',  'odoengine_capacity.sh',  'prereq_scripts.sh', 'odoengine_capacity_orderids.sql', 'odoengine_capacity_tablespace.sql', 'odoengine_metric_ordersummary.sql', 'odoengine_metric_partition_count.sql', 'prereq_db_directory.sql']
 
   omc_script_list.each  do |omcscripts| 
     template "/home/oracle/scripts/odo/#{omcscripts}" do
