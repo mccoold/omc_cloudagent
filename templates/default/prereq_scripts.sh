@@ -6,4 +6,4 @@ export ORACLE_SID=DB11G
 $ORACLE_HOME/bin/sqlplus sys/Password123 as sysdba @/home/oracle/scripts/odo/prereq_db_directory.sql
 
 # Add a cron job
-(crontab -l 2>/dev/null; echo "*/5 * * * * /home/oracle/scripts/odo/collect_metrics.sh >  /home/oracle/scripts/odo/collect_metrics.log 2>&1") | crontab -
+(crontab -l 2>/dev/null; echo "*/1 * * * * /home/oracle/scripts/odo/collect_metrics.sh >  /home/oracle/scripts/odo/collect_metrics.log 2>&1") | crontab -
