@@ -7,7 +7,7 @@ getArray() {
     done < "$1"
 }
 
-getArray "./odomeIds"
+getArray "/home/oracle/scripts/odo/odomeIds"
 declare -A ary
 for line in "${array[@]}"
 do
