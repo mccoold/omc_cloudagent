@@ -30,7 +30,7 @@ curl -X PUT \
     "entityId": "'"${ary[odoenginedbinstance_meId]}"'",
     "entityName" : "'"${ary[odoenginedbinstance_name]}"'",
     "entityType" : "omc_oracle_db_instance",
-    "entityDisplayName" : "'"${ary[odoenginedbinstance_name]}"'",
+    "entityDisplayName" : "'"${ary[odoenginedbinstance_name]}"'_decom",
     "namespace" : "EMAAS",
     "availabilityStatus": "DOWN"
 }'
@@ -49,7 +49,7 @@ curl -X PUT \
     "entityId": "'"${ary[odoengineosm_meId]}"'",
     "entityName" : "'"${ary[odoengineosm_name]}"'",
     "entityType" : "usr_odo_engine_osm",
-    "entityDisplayName" : "'"${ary[odoengineosm_name]}"'",
+    "entityDisplayName" : "'"${ary[odoengineosm_name]}"'_decom",
     "namespace" : "EMAAS",
     "availabilityStatus": "DOWN"
 }'
@@ -69,7 +69,7 @@ curl -X PUT \
     "entityId": "'"${ary[odoengineasap_meId]}"'",
     "entityName" : "'"${ary[odoengineasap_name]}"'",
     "entityType" : "usr_odo_engine_asap",
-    "entityDisplayName" : "'"${ary[odoengineasap_name]}"'",
+    "entityDisplayName" : "'"${ary[odoengineasap_name]}"'_decom",
     "namespace" : "EMAAS",
     "availabilityStatus": "DOWN"
 }'
@@ -87,7 +87,7 @@ curl -X PUT \
     "entityId": "'"${ary[odoengine_meId]}"'",
     "entityName" : "'"${ary[odoengine_name]}"'",
     "entityType" : "usr_odo_engine",
-    "entityDisplayName" : "'"${ary[odoengine_name]}"'",
+    "entityDisplayName" : "'"${ary[odoengine_name]}"'_decom",
     "namespace" : "EMAAS",
     "availabilityStatus": "DOWN"
 }'
