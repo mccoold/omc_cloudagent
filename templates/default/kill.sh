@@ -15,7 +15,7 @@ do
      value=${line#*=}
      ary[$key]=$value
 done
-
+mydate=$(date --utc +%FT%TZ)
 #
 # curl command to mark DB down
 #
@@ -26,7 +26,7 @@ curl -X PUT \
   -H 'content-type: application/json' \
   -H 'postman-token: 42e7d718-24a9-ede4-ee14-cd7296fbe370' \
   -d '{
-    "collectionTs" : "2017-09-20T02:35:01Z",
+    "collectionTs" : "'"$mydate"'",
     "entityId": "'"${ary[odoenginedbinstance_meId]}"'",
     "entityName" : "'"${ary[odoenginedbinstance_name]}"'",
     "entityType" : "omc_oracle_db_instance",
@@ -45,7 +45,7 @@ curl -X PUT \
   -H 'content-type: application/json' \
   -H 'postman-token: 42e7d718-24a9-ede4-ee14-cd7296fbe370' \
   -d '{
-    "collectionTs" : "2017-09-20T02:35:01Z",
+    "collectionTs" : "'"$mydate"'",
     "entityId": "'"${ary[odoengineosm_meId]}"'",
     "entityName" : "'"${ary[odoengineosm_name]}"'",
     "entityType" : "usr_odo_engine_osm",
@@ -65,7 +65,7 @@ curl -X PUT \
   -H 'content-type: application/json' \
   -H 'postman-token: 42e7d718-24a9-ede4-ee14-cd7296fbe370' \
   -d '{
-    "collectionTs" : "2017-09-20T02:35:01Z",
+    "collectionTs" : "'"$mydate"'",
     "entityId": "'"${ary[odoengineasap_meId]}"'",
     "entityName" : "'"${ary[odoengineasap_name]}"'",
     "entityType" : "usr_odo_engine_asap",
@@ -83,7 +83,7 @@ curl -X PUT \
   -H 'content-type: application/json' \
   -H 'postman-token: 42e7d718-24a9-ede4-ee14-cd7296fbe370' \
   -d '{
-    "collectionTs" : "2017-09-20T02:35:01Z",
+    "collectionTs" : "'"$mydate"'",
     "entityId": "'"${ary[odoengine_meId]}"'",
     "entityName" : "'"${ary[odoengine_name]}"'",
     "entityType" : "usr_odo_engine",
