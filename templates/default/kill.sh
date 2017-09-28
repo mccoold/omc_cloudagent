@@ -16,7 +16,8 @@ do
      ary[$key]=$value
 done
 mydate=$(date --utc +%FT%TZ)
-#
+# stop cronjob to prevent race condition on status
+rm -rf /var/spool/cron/oracle
 # curl command to mark DB down
 #
 curl -X PUT \
