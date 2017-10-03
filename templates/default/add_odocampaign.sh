@@ -24,7 +24,7 @@ if [ "$enginenumber" -lt "1" ]; then
         echo "    \"campaign\" : \"$entityname\"" >> $output
         echo "    }," >> $output
         echo "    \"availabilityStatus\": \"UP\","              >> $output
-        echo "    \"tags\": {},"                                                >> $output
+#        echo "    \"tags\": {},"                                                >> $output
         echo "    \"meClass\": \"TARGET\","                     >> $output
         echo "    \"agentBasedAvailability\": \"UP\""   >> $output
         echo "}"                                                                                >> $output

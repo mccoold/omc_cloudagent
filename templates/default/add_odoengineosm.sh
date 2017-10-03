@@ -22,7 +22,7 @@ echo "    \"tags\":{" >> $output
 echo "    \"campaign\" : \"$odocampaign_name\"" >> $output
 echo "    },"                                                                   >> $output
 echo "    \"availabilityStatus\": \"UP\","              >> $output
-echo "    \"tags\": {},"                                                >> $output
+#echo "    \"tags\": {},"                                                >> $output
 echo "    \"meClass\": \"TARGET\","                     >> $output
 echo "    \"agentBasedAvailability\": \"UP\""   >> $output
 echo "}"                                                                                >> $output
