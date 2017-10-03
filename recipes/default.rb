@@ -84,12 +84,12 @@ end
 
   regkey = node.default['omc']['regkey']
   # execute 'download_only_lama.zip' do
-  #   cwd node.default['omc']['base_dir']
-  #   user "#{omcuser}"
-  #  # environment ({"https_proxy" => "www-proxy.us.oracle.com:80"})
-  #   command "./AgentInstall\.sh AGENT_TYPE=cloud_agent AGENT_REGISTRATION_KEY=#{regkey} STAGE_LOCATION=#{stage_dir} -download_only"
-  #   action :run
-  #   not_if { ::File.exist?("#{stage_dir}/lama.zip") }
+   #  cwd node.default['omc']['base_dir']
+    # user "#{omcuser}"
+    # environment ({"https_proxy" => "www-proxy.us.oracle.com:80"})
+    # command "./AgentInstall\.sh AGENT_TYPE=cloud_agent AGENT_REGISTRATION_KEY=#{regkey} STAGE_LOCATION=#{stage_dir} -download_only"
+    # action :run
+    # not_if { ::File.exist?("#{stage_dir}/lama.zip") }
   # end
 
 
