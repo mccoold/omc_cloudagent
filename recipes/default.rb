@@ -99,6 +99,8 @@ execute 'install_from_staged' do
   environment ({"USER" => "#{omcuser}"})
   user "#{omcuser}"
   group "#{omcgroup}"
+  retries 3
+  ignore_failure true
   command "./AgentInstall.sh AGENT_TYPE=cloud_agent AGENT_REGISTRATION_KEY=#{regkey} AGENT_BASE_DIR=#{agent_base_dir} -staged"
   not_if { ::File.exist?("#{agent_base_dir}/agent_inst/") }
   action :run

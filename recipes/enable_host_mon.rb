@@ -21,5 +21,6 @@ execute 'call_omcli_host_agent' do
   group "#{omcgroup}"
   command "./omcli update_entity agent #{json}"
   action :nothing
+  ignore_failure true
 end
 
