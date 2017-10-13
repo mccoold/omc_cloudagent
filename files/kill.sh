@@ -93,4 +93,6 @@ curl -X PUT \
     "availabilityStatus": "DOWN"
 }'
 
-
+#
+# Deinstall Oracle Management Cloud Agent
+su - oracle -c "/omc/cloud_agent/core/*/sysman/install/AgentInstall.sh -deinstall"

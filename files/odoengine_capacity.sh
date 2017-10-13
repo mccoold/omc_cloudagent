@@ -1,4 +1,6 @@
 #!/bin/sh
+basedir=/home/oracle/scripts/odo
+source $basedir/odomeIds
 export ORACLE_HOME=/u01/app/oracle/product/11.2.0/db_1
 export ORACLE_SID=DB11G
 
@@ -16,6 +18,8 @@ rfs_capcity=$(df -h / | sed 1d | sed 's/%//' | awk '{print $5}')
 
 echo "[" > $output
 echo "  {" >> $output
+echo "    \"entityName\" : \""$odoengine_name"\"," >> $output
+echo "    \"entityId\" : \""$odoengine_meId"\"," >> $output
 echo "    \"collectionTs\" : \""$mydate"\"," >> $output
 echo "    \"entityType\" : \"usr_odo_engine\"," >> $output
 echo "    \"metricGroup\" : \"capacity_utilization\"," >> $output
@@ -35,3 +39,4 @@ echo "      ]" >> $output
 echo "    ]" >> $output
 echo "  }" >> $output
 echo "]" >> $output
+
