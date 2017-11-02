@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# This script expects a value to be passed, i.e. Campaign Name
+mydate=$(date --utc +%FT%TZ)
+
+curlCommand="curl -X GET 'https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/?entityName="$1"&entityType=usr_odo_campaign' -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: 14301df8-5a11-61a1-5aa1-370bc9adb018'"
+
+odocampaign_meId=$(eval $curlCommand | grep -o -P '(?<=\"entityId\":\").*(?=\"\,\"entityType\")')
+
+#
+# Change campaign status to decomissioned
+#
+curl -X PUT \
+ https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
+  -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -d '{
+    "collectionTs" : "'"$mydate"'",
+    "entityId": "'"$odocampaign_meId"'",
+    "entityName" : "'"$1"'",
+    "entityType" : "usr_odo_engine",
+    "entityDisplayName" : "'"$1"'_decom",
+    "namespace" : "EMAAS",
+    "availabilityStatus": "DOWN"
+}'
