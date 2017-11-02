@@ -4,7 +4,9 @@ import requests, json, socket
 
 # Static Variables
 thishost = socket.gethostname()
+thishost = 'partyhouse3-0'
 mylist = []
+maxlist = 0
 
 # URLs and Headers
 get_entity = "https://uscgbuodotrial.analytics.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/"
@@ -25,6 +27,8 @@ for entry in reversed(entity['items']):
 		mylist.append(entry['entityName'])
 try:
 	maxlist = (max(mylist).split(".")[1]).split("_")[0]
+	#Find the latest incarnation and add one to it
+	maxlist = int(maxlist) + 1
 except Exception as inst:
 	#if no incarnations exist, it'll be the first one
 	maxlist = 0
