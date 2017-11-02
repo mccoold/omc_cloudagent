@@ -30,6 +30,8 @@ Instruction
 		Add the odo engine's database instance. It's name is derived from the hostname.
 1.2.5. add_odoengineasap.sh
 		Add the odo engine's asap module. It's name is derived from the hostname.
+1.2.6. add_associations.sh
+		Add associations between the different entities.
 
 2. Post Engine Creation - On Metric Collection
 2.1. collect_metrics.sh

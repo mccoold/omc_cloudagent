@@ -8,8 +8,35 @@ source $basedir/odomeIds
 $ORACLE_HOME/bin/sqlplus ordermgmt/Password123 @/home/oracle/scripts/odo/odoengine_metric_ordersummary.sql
 $ORACLE_HOME/bin/sqlplus ordermgmt/Password123 @/home/oracle/scripts/odo/odoengine_metric_partition_count.sql
 
+# Build order summary JSON file from the values file
+source $basedir/odoengine_metric_ordersummary.values
+output=$basedir/odoengine_metric_ordersummary.json
+mydate=$(date --utc +%FT%TZ)
+echo "[" > $output
+echo "  {" >> $output
+echo "    \"collectionTs\" : \""$mydate"\"," >> $output
+echo "    \"entityType\" : \"usr_odo_engine\"," >> $output
+echo "    \"metricGroup\" : \"engine_order_counts\"," >> $output
+echo "    \"metricNames\" : [" >> $output
+echo "          \"total_orders\"," >> $output
+echo "          \"open_orders\"," >> $output
+echo "          \"successful_orders\"," >> $output
+echo "          \"failed_orders\"" >> $output
+echo "    ]," >> $output
+echo "    \"metricValues\" : [" >> $output
+echo "      [" >> $output
+echo "         "$total_orders"," >> $output
+echo "         "$open_orders"," >> $output
+echo "         "$successful_orders"," >> $output
+echo "         "$failed_orders >> $output
+echo "      ]" >> $output
+echo "    ]" >> $output
+echo "  }" >> $output
+echo "]" >> $output
+
 $basedir/odoengine_capacity.sh
 $basedir/collect_status.sh
+$basedir/monitor_engine.sh
 
 curl -X POST \
   https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/metrics/ \

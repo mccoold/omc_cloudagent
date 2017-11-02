@@ -15,6 +15,8 @@ output=$basedir/odoengine_metric_capacity.json
 mydate=$(date --utc +%FT%TZ)
 
 rfs_capcity=$(df -h / | sed 1d | sed 's/%//' | awk '{print $5}')
+echo "" >> $basedir/odoengine_capacity.values
+echo "rfs_capcity=${rfs_capcity}" >> $basedir/odoengine_capacity.values
 
 echo "[" > $output
 echo "  {" >> $output
