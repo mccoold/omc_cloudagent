@@ -19,10 +19,10 @@ echo "    \"value\": \"$odocampaign_name\"" >> $output
 echo "    }" >> $output
 echo "    },"                                                                   >> $output
 echo "    \"tags\":{" >> $output
-echo "    \"campaign\" : \"$odocampaign_name\"" >> $output
+echo "    \"campaign\" : \"$odocampaign_name,\"" >> $output
+echo "    \"campaign\" : \"$odoengine_name\"" >> $output
 echo "    },"                                                                   >> $output
 echo "    \"availabilityStatus\": \"UP\","              >> $output
-#echo "    \"tags\": {},"                                                >> $output
 echo "    \"meClass\": \"TARGET\","                     >> $output
 echo "    \"agentBasedAvailability\": \"UP\""   >> $output
 echo "}"                                                                                >> $output
