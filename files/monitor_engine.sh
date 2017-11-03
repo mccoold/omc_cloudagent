@@ -31,8 +31,8 @@ function checkCapacity {
 
 	    # Mark engine metric group and/or properties to reflect new status with message
 	    # Property or metric is set to True for an email alert
-            echo "TODO: Set alert flag for engine in OMC as metric"
-            echo "TODO: Set alert message - $alert_message - for engine in OMC as metric"
+            #echo "TODO: Set alert flag for engine in OMC as metric"
+            #echo "TODO: Set alert message - $alert_message - for engine in OMC as metric"
 	    	curl -X POST \
   				https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/metrics/ \
   				-H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
@@ -56,7 +56,7 @@ function checkCapacity {
 
 	    # 
         
-	    echo "TODO: Set engine name to <engine_name>_drain"
+	    #echo "TODO: Set engine name to <engine_name>_drain"
             curl -X PUT \
  				https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
   				-H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
@@ -67,7 +67,7 @@ function checkCapacity {
   				  "entityId": "'"$odoengine_id"'",
   				  "entityName" : "'"$odoengine_name"'",
   				  "entityType" : "usr_odo_engine",
-  				  "entityDisplayName" : "'"$odoengine_name"'_decom",
+  				  "entityDisplayName" : "'"$odoengine_name"'_drain",
   				  "namespace" : "EMAAS",
   				  "availabilityStatus": "UP"
 				}'
