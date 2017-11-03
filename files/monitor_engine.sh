@@ -3,6 +3,9 @@
 export basedir=/home/oracle/scripts/odo
 export engine_drain_flag="$basedir/ENGINE_IS_DRAINING"
 export engine_clear_flag="$basedir/ENGINE_IS_CLEAR"
+source $basedir/odomeIds
+mydate=$(date --utc +%FT%TZ)
+
 # Engine Capacity threshold variable
 threshold_value=80
 
@@ -29,10 +32,45 @@ function checkCapacity {
 	    # Mark engine metric group and/or properties to reflect new status with message
 	    # Property or metric is set to True for an email alert
             echo "TODO: Set alert flag for engine in OMC as metric"
-	    # 
             echo "TODO: Set alert message - $alert_message - for engine in OMC as metric"
+	    	curl -X POST \
+  				https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/metrics/ \
+  				-H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
+  				-H 'cache-control: no-cache' \
+  				-H 'content-type: application/octet-stream' \
+  				-d '{ 
+  					"entityName": "'"$odoengine_name"'",
+  					"entityId": "'"$odoengine_id"'",
+        			"collectionTs": "'"$mydate"'",
+        			"entityType": "usr_odo_engine",
+    				"metricGroup" : "engine_status_metrics",
+    				"metricNames" : [
+      					"status_alert_flag",
+      					"status_alert_message"
+    				],
+    				"metricValues" : [
+      				[
+        				1,
+        				"'"$alert_message"'"
+        			]]}'
+
+	    # 
+        
 	    echo "TODO: Set engine name to <engine_name>_drain"
-            break
+            curl -X PUT \
+ 				https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
+  				-H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
+  				-H 'cache-control: no-cache' \
+  				-H 'content-type: application/json' \
+  				-d '{
+  				  "collectionTs" : "'"$mydate"'",
+  				  "entityId": "'"$odoengine_id"'",
+  				  "entityName" : "'"$odoengine_name"'",
+  				  "entityType" : "usr_odo_engine",
+  				  "entityDisplayName" : "'"$odoengine_name"'_decom",
+  				  "namespace" : "EMAAS",
+  				  "availabilityStatus": "UP"
+				}'
         fi
     done
 }

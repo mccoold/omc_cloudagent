@@ -19,7 +19,7 @@ curl -X PUT \
     "collectionTs" : "'"$mydate"'",
     "entityId": "'"$odocampaign_meId"'",
     "entityName" : "'"$1"'",
-    "entityType" : "usr_odo_engine",
+    "entityType" : "usr_odo_campaign",
     "entityDisplayName" : "'"$1"'_decom",
     "namespace" : "EMAAS",
     "availabilityStatus": "DOWN"
