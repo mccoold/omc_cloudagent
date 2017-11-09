@@ -4,7 +4,6 @@ import requests, json, socket
 
 # Static Variables
 thishost = socket.gethostname()
-thishost = 'partyhouse3-0'
 mylist = []
 maxlist = 0
 

@@ -246,7 +246,25 @@ https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/tm-metadat
             "metricGroupType": "STANDARD",
             "rollupDisabled": 0,
             "keyColumnNames": []
-        }
+        },
+        {
+    		"columnList" : [
+      		{
+        		"columnClass" : "NUMBER",
+        		"metricColumnDisplayName" : "Status Alert Flag",
+        		"metricColumnName" : "status_alert_flag"
+      		},
+      		{
+        		"columnClass" : "STRING",
+        		"metricColumnDisplayName" : "Status Alert Message",
+        		"metricColumnName" : "status_alert_message"
+      		}
+    						],
+    		"entityTypeName" : "usr_odo_engine_test",
+    		"metricGroupClass" : "PERFORMANCE",
+    		"metricGroupDisplayName" : "Engine Status Metrics",
+    		"metricGroupName" : "engine_status_metrics"
+  		}
     ],
     "propertyTypeList": [
     ],
