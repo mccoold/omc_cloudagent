@@ -5,8 +5,8 @@ export ORACLE_SID=DB11G
 basedir=/home/oracle/scripts/odo
 source $basedir/odomeIds
 
-$ORACLE_HOME/bin/sqlplus ordermgmt/Password123 @/home/oracle/scripts/odo/odoengine_metric_ordersummary.sql
-$ORACLE_HOME/bin/sqlplus ordermgmt/Password123 @/home/oracle/scripts/odo/odoengine_metric_partition_count.sql
+$ORACLE_HOME/bin/sqlplus moncs/Password123 @/home/oracle/scripts/odo/odoengine_metric_ordersummary.sql
+$ORACLE_HOME/bin/sqlplus moncs/Password123 @/home/oracle/scripts/odo/odoengine_metric_partition_count.sql
 
 # Build order summary JSON file from the values file
 source $basedir/odoengine_metric_ordersummary.values

@@ -13,7 +13,7 @@ SELECT to_char(sysdate,'YYYY-MM-DD"T"HH24:MI:SS"Z"')
 
 select count(1)
   into v_totalpartitions
-  from user_tab_partitions
+  from all_tab_partitions
  where table_name = 'OM_ORDER_HEADER'
  order by partition_name;
 
@@ -31,13 +31,13 @@ utl_file.put_line(file1,'"metricValues" : [');
 
 for p in
 (select partition_name
-from user_tab_partitions
+from all_tab_partitions
 where table_name = 'OM_ORDER_HEADER'
 order by partition_name
 )
 loop
 v_loopcounter := v_loopcounter + 1;
-v_sql := 'select count(*) from om_order_header partition('||p.partition_name||')';
+v_sql := 'select count(*) from ordermgmt.om_order_header partition('||p.partition_name||')';
 execute immediate v_sql into v_count;
 if v_loopcounter = v_totalpartitions then
         v_ending := '';

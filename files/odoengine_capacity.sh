@@ -6,7 +6,7 @@ export ORACLE_SID=DB11G
 
 # This starts the spool file and collects first set of metrics for capacity
 $ORACLE_HOME/bin/sqlplus sys/Password123 as sysdba @/home/oracle/scripts/odo/odoengine_capacity_tablespace.sql
-$ORACLE_HOME/bin/sqlplus ordermgmt/Password123 @/home/oracle/scripts/odo/odoengine_capacity_orderids.sql
+$ORACLE_HOME/bin/sqlplus moncs/Password123 @/home/oracle/scripts/odo/odoengine_capacity_orderids.sql
 
 basedir=/home/oracle/scripts/odo
 source $basedir/odomeIds
