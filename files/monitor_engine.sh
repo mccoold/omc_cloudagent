@@ -79,7 +79,8 @@ function checkDrained {
     inflight=`cat $basedir/odoengine_ordersummary.values | grep open_orders | cut -f2 -d=`
     if [[ "$inflight" -eq 0 ]]; then
         echo "Engine is drained"
-        echo "TBD: Taint engine via Jenkins"
+        #echo "TBD: Taint engine via Jenkins"
+        /home/oracle/scripts/odo/taint.sh
         rm $engine_drain_flag
         touch $engine_clear_flag
     fi
