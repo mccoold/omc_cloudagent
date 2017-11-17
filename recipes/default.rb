@@ -50,7 +50,7 @@ end
 'add_odoengineosm.sh', 'add_odoengine.sh', 'collect_metrics.sh', 'collect_status.sh', 
 'create_odoentities.sh',  'odoengine_capacity.sh',  'prereq_scripts.sh', 'odoengine_capacity_orderids.sql', 
 'odoengine_capacity_tablespace.sql', 'odoengine_metric_ordersummary.sql', 
-'odoengine_metric_partition_count.sql', 'prereq_db_directory.sql', 'monitor_engine.sh']
+'odoengine_metric_partition_count.sql', 'prereq_db_directory.sql', 'monitor_engine.sh', 'get_engine_name.py']
 
   omc_script_list.each  do |omcscripts| 
     cookbook_file "/home/oracle/scripts/odo/#{omcscripts}" do
