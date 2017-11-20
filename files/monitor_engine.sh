@@ -40,7 +40,7 @@ function checkCapacity {
   				-H 'content-type: application/octet-stream' \
   				-d '{ 
   					"entityName": "'"$odoengine_name"'",
-  					"entityId": "'"$odoengine_id"'",
+  					"entityId": "'"$odoengine_meId"'",
         			"collectionTs": "'"$mydate"'",
         			"entityType": "usr_odo_engine",
     				"metricGroup" : "engine_status_metrics",
@@ -64,7 +64,7 @@ function checkCapacity {
   				-H 'content-type: application/json' \
   				-d '{
   				  "collectionTs" : "'"$mydate"'",
-  				  "entityId": "'"$odoengine_id"'",
+  				  "entityId": "'"$odoengine_meId"'",
   				  "entityName" : "'"$odoengine_name"'",
   				  "entityType" : "usr_odo_engine",
   				  "displayName" : "'"$odoengine_name"'_drain",
