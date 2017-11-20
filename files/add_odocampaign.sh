@@ -2,7 +2,7 @@
 basedir=/home/oracle/scripts/odo
 entityname=$(hostname -s |  awk -F- '{print $1}')
 output=$basedir/odocampaign.json
-
+mydate=$(date --utc +%FT%TZ)
 enginenumber=$(hostname -s |  awk -F- '{print $2}')
 
 if [ "$enginenumber" -lt "1" ]; then
@@ -45,6 +45,25 @@ if [ "$enginenumber" -lt "1" ]; then
           -H 'content-type: application/json' \
           -H 'postman-token: 054f36fd-aee3-b8ed-d04c-c334f8615601' \
                 |  grep -o -P '(?<=\"entityName\":\").*(?=\",\"properties)')
+
+	output=$basedir/odocampaign_createdate.json
+
+        echo "{ \"entityName\": \"$entityname\", " > $output
+        echo "  \"entityId\": \"$meId\", " >> $output
+        echo "  \"collectionTs\": \""$mydate"\", " >> $output
+        echo "  \"entityType\": \"usr_odo_campaign\", " >> $output
+        echo "  \"metricGroup\" : \"campaign_inception\", " >> $output
+        echo "  \"metricNames\" : [ " >> $output
+        echo "    \"create_date\" ], " >> $output
+        echo "  \"metricValues\" : [[ " >> $output
+        echo "    \"$(date)\"]]} " >> $output
+
+	curl -X POST \
+  		https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/metrics/ \
+  		-H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
+  		-H 'cache-control: no-cache' \
+  		-H 'content-type: application/octet-stream' \
+  		-d '@/home/oracle/scripts/odo/odocampaign_createdate.json'	
 
         # Write variable to file - to be used later
         odomeIds=$basedir/odomeIds

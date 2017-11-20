@@ -20,7 +20,7 @@ https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/tm-metadat
     "parentTargetType": "omc_entity",
     "meClass": "TARGET",
     "metricGroupTypeList": [
-        {
+        	{
             "entityTypeName": "usr_odo_campaign",
             "metricGroupName": "campaign_order_counts",
             "metricGroupDisplayName": "Campaign Order Counts",
@@ -97,7 +97,20 @@ https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/tm-metadat
                     "knownValueList": [],
                     "ligDwnSmplKeys": 0,
                     "displayInUI": true
-                }
+                },
+                {
+    				"columnList" : [
+      				{
+        				"columnClass" : "STRING",
+        				"metricColumnDisplayName" : "Create Date",
+        				"metricColumnName" : "create_date"
+      				}
+    								],
+    				"entityTypeName" : "usr_odo_campaign",
+    				"metricGroupClass" : "PERFORMANCE",
+    				"metricGroupDisplayName" : "Campaign Inception",
+    				"metricGroupName" : "campaign_inception"
+  				}
             ],
             "config": false,
             "displayInUI": true,

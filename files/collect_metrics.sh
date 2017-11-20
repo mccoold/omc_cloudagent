@@ -36,7 +36,6 @@ echo "]" >> $output
 
 $basedir/odoengine_capacity.sh
 $basedir/collect_status.sh
-$basedir/monitor_engine.sh
 
 curl -X POST \
   https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/metrics/ \
@@ -82,3 +81,5 @@ curl -X PUT \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -d '@/home/oracle/scripts/odo/status_osm.json'
+
+$basedir/monitor_engine.sh

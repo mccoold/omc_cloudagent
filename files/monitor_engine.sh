@@ -67,7 +67,7 @@ function checkCapacity {
   				  "entityId": "'"$odoengine_id"'",
   				  "entityName" : "'"$odoengine_name"'",
   				  "entityType" : "usr_odo_engine",
-  				  "entityDisplayName" : "'"$odoengine_name"'_drain",
+  				  "displayName" : "'"$odoengine_name"'_drain",
   				  "namespace" : "EMAAS",
   				  "availabilityStatus": "UP"
 				}'
