@@ -86,12 +86,20 @@ else
         odoengineupordown="DOWN"
 fi
 
+odoengine_dispname=$odoengine_name
+engine_drain_flag="$basedir/ENGINE_IS_DRAINING"
+engine_clear_flag="$basedir/ENGINE_IS_CLEAR"
+if [[ -e $engine_drain_flag || -e $engine_clear_flag ]]; then
+        odoengine_dispname="${odoengine_dispname}_drain"
+fi
+
 output=$basedir/status_odoengine.json
 
 echo "{" > $output
 echo "    \"collectionTs\" : \""$mydate"\"," >> $output
 echo "    \"entityId\": \""$odoengine_meId"\"," >> $output
 echo "    \"entityName\" : \""$odoengine_name"\"," >> $output
+echo "    \"entityDisplayName\" : \""$odoengine_dispname"\"," >> $output
 echo "    \"entityType\" : \"usr_odo_engine\"," >> $output
 echo "    \"namespace\" : \"EMAAS\"," >> $output
 echo "    \"availabilityStatus\": \""$odoengineupordown"\"" >> $output
