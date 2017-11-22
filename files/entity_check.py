@@ -1,5 +1,4 @@
 import requests, json, datetime, sys
-from requests import ReadTimeout, ConnectTimeout, HTTPError, Timeout, ConnectionError
 
 thisentityId = 0
 get_base_entityurl = "https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/?entityName="
@@ -17,6 +16,6 @@ r = requests.get(get_entityurl, headers=headers)
 entity = r.json()
 
 for entityentry in entity['items']:
-	thisentityId = entityentry['entityId']
+        thisentityId = entityentry['entityId']
 
 print thisentityId
