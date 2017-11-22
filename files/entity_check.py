@@ -19,7 +19,4 @@ entity = r.json()
 for entityentry in entity['items']:
 	thisentityId = entityentry['entityId']
 
-if thisentityId == "":
-	print 0
-else:
-	print 1
+print thisentityId
