@@ -38,18 +38,20 @@ for entry in entity['items']:
 				
 				# If the engine hasn't updated in over 15 minutes, mark it as AWOL
 				if (datetime.datetime.utcnow() - entitystatusdate).seconds > 900:
-					#print entry['entityName'], 'hasn''t reported in over 15 minutes.'
+					# Ignore any engines in Decommission state
+					if "_decom" not in (entry['entityDisplayName']):
+						#print entry['entityName'], 'hasn''t reported in over 15 minutes.'
 				
-					jsonData = {
-    					"collectionTs" : "" + dateNow + "",
-    					"entityId": ""+ entry['entityId'] + "",
-    					"entityName" : "" + entry['entityName'] + "",
-    					"entityType" : "usr_odo_engine",
-    					"entityDisplayName" : "" + entry['entityName'] + "_awol",
-    					"namespace" : "EMAAS",
-    					"availabilityStatus": "DOWN"
-					}
-					print 'new name: ', entry['entityName'] + "_awol"
-					#data = json.dumps(jsonData)
-					#print(data)
-					r = requests.put(put_entitystatus, headers=headers, json=jsonData, verify=True)
+						jsonData = {
+    						"collectionTs" : "" + dateNow + "",
+    						"entityId": ""+ entry['entityId'] + "",
+    						"entityName" : "" + entry['entityName'] + "",
+    						"entityType" : "usr_odo_engine",
+    						"entityDisplayName" : "" + entry['entityName'] + "_awol",
+    						"namespace" : "EMAAS",
+    						"availabilityStatus": "DOWN"
+						}	
+						print 'new name: ', entry['entityName'] + "_awol"
+						data = json.dumps(jsonData)
+						print(data)
+						r = requests.put(put_entitystatus, headers=headers, json=jsonData, verify=True)
