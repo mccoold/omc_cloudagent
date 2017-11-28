@@ -12,7 +12,7 @@ get_entity = "https://uscgbuodo2trial.analytics.management.us2.oraclecloud.com/s
 
 headers = {
     'content-type': "application/json",
-    'authorization': "Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0",
+    'authorization': "Basic dXNjZ2J1b2RvMnRyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==",
     'cache-control': "no-cache"
     }
     

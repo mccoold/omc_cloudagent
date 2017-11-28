@@ -35,7 +35,7 @@ echo "}"                                                                        
 
 meId=$(curl -X POST \
   https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/tm-data/mes \
-  -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
+  -H 'authorization: Basic dXNjZ2J1b2RvMnRyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -d '@/home/oracle/scripts/odo/odoengine.json' \
@@ -43,7 +43,7 @@ meId=$(curl -X POST \
 
 meName=$(curl -X GET \
   https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/$meId \
-  -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
+  -H 'authorization: Basic dXNjZ2J1b2RvMnRyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
         |  grep -o -P '(?<=\"entityName\":\").*(?=\",\"properties)')
@@ -51,7 +51,7 @@ meName=$(curl -X GET \
 # Create an OMC group for this engine
 curl -X POST \
  https://uscgbuodo2trial.analytics.management.us2.oraclecloud.com/serviceapi/tm-data/groups/ \
-  -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
+  -H 'authorization: Basic dXNjZ2J1b2RvMnRyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -d '{
