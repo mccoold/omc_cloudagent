@@ -4,7 +4,7 @@ entityname=$(hostname -s |  awk -F- '{print $1}')
 output=$basedir/odoengine.json
 source $basedir/odomeIds
 
-curlCommand="curl -X GET 'https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/?entityName="$entityname"&entityType=usr_odo_campaign' -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: 14301df8-5a11-61a1-5aa1-370bc9adb018'"
+curlCommand="curl -X GET 'https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/?entityName="$entityname"&entityType=usr_odo_campaign' -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: 14301df8-5a11-61a1-5aa1-370bc9adb018'"
 
 odocampaign_meId=$(eval $curlCommand | grep -o -P '(?<=\"entityId\":\").*(?=\"\,\"entityType\")')
 
@@ -32,11 +32,10 @@ echo "\"destEntityType\": \"usr_odo_campaign\"" >> $output
 echo "}" >> $output
 
 curl -X POST \
-  https://uscgbuodotrial.analytics.management.us2.oraclecloud.com/serviceapi/tm-data/associations \
+  https://uscgbuodo2trial.analytics.management.us2.oraclecloud.com/serviceapi/tm-data/associations \
   -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
-  -H 'postman-token: 47f60982-a528-86bf-55b1-d6ec25407ddd' \
   -d '@/home/oracle/scripts/odo/assoc_engine_campaign.json'
 
 # Associate OSM to the Engine
@@ -51,11 +50,10 @@ echo "\"destEntityType\": \"usr_odo_engine\"" >> $output
 echo "}" >> $output
 
 curl -X POST \
-  https://uscgbuodotrial.analytics.management.us2.oraclecloud.com/serviceapi/tm-data/associations \
+  https://uscgbuodo2trial.analytics.management.us2.oraclecloud.com/serviceapi/tm-data/associations \
   -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
-  -H 'postman-token: 47f60982-a528-86bf-55b1-d6ec25407ddd' \
   -d '@/home/oracle/scripts/odo/assoc_osm_engine.json'
 
 # Associate ASAP to the Engine
@@ -70,11 +68,10 @@ echo "\"destEntityType\": \"usr_odo_engine\"" >> $output
 echo "}" >> $output
 
 curl -X POST \
-  https://uscgbuodotrial.analytics.management.us2.oraclecloud.com/serviceapi/tm-data/associations \
+  https://uscgbuodo2trial.analytics.management.us2.oraclecloud.com/serviceapi/tm-data/associations \
   -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
-  -H 'postman-token: 47f60982-a528-86bf-55b1-d6ec25407ddd' \
   -d '@/home/oracle/scripts/odo/assoc_asap_engine.json'
 
 # Associate DB Instance to the Engine
@@ -89,9 +86,8 @@ echo "\"destEntityType\": \"usr_odo_engine\"" >> $output
 echo "}" >> $output
 
 curl -X POST \
-  https://uscgbuodotrial.analytics.management.us2.oraclecloud.com/serviceapi/tm-data/associations \
+  https://uscgbuodo2trial.analytics.management.us2.oraclecloud.com/serviceapi/tm-data/associations \
   -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
-  -H 'postman-token: 47f60982-a528-86bf-55b1-d6ec25407ddd' \
   -d '@/home/oracle/scripts/odo/assoc_dbinstance_engine.json'

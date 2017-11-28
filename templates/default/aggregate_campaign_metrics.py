@@ -7,17 +7,16 @@ from requests import ReadTimeout, ConnectTimeout, HTTPError, Timeout, Connection
 dateNow = (datetime.datetime.now()).strftime('%Y-%m-%dT%H:%M:%SZ')
 
 # URLs and Headers
-get_groupurl = "https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/groups/"
-get_base_campaignentityurl = "https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/?entityName="
-get_base_groupentityurl = "https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/groups/"
-get_base_entitymetricurl = "https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/tm-data/mes/"
-post_base_entitymetriccurl = "https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/tm-data/mes/"
+get_groupurl = "https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/groups/"
+get_base_campaignentityurl = "https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/?entityName="
+get_base_groupentityurl = "https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/groups/"
+get_base_entitymetricurl = "https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/tm-data/mes/"
+post_base_entitymetriccurl = "https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/tm-data/mes/"
 
 headers = {
     'content-type': "application/json",
     'authorization': "Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0",
-    'cache-control': "no-cache",
-    'postman-token': "d6f9b060-5326-24fd-a711-a2373ea4396f"
+    'cache-control': "no-cache"
     }
 
 # Running Counters; reset to 0

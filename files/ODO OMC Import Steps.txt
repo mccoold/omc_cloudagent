@@ -1,0 +1,32 @@
+1. Create Entities
+	Engine -> 1.1.create_entitytype_odo_engine
+	Campaign -> 1.1.create_entitytype_odo_engine
+	Asap -> 1.1.create_entitytype_odo_engine
+	OSM -> 1.1.create_entitytype_odo_engine
+
+2. Create Dashboards/Widgets
+	ODO -> 2.1.import_odo_dashboard.html
+	Campaign -> 2.2.import_odo_campaign_dashboard.html
+	Engine -> 2.3.import_odo_engine_dashboard.html
+
+3. Edit following scripts and replace references for uscgbuodotrial to uscgbuodo2trial
+
+/files/entity_check.py:4:get_base_entityurl = "https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/?entityName="
+./files/kill.sh:24: https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
+./files/add_odoengineasap.sh:38:                        https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/tm-data/mes \
+./files/campaign_decommission_status.sh:6:curlCommand="curl -X GET 'https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/?entityName="$1"&entityType=usr_odo_campaign' -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: 14301df8-5a11-61a1-5aa1-370bc9adb018'"
+./files/add_odoengineosm.sh:48:                https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/$meId \
+./files/add_odoengine.sh:55: https://uscgbuodotrial.analytics.management.us2.oraclecloud.com/serviceapi/tm-data/groups/ \
+./files/add_associations.sh:7:curlCommand="curl -X GET 'https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/?entityName="$entityname"&entityType=usr_odo_campaign' -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: 14301df8-5a11-61a1-5aa1-370bc9adb018'"
+./files/add_associations.sh:92:  https://uscgbuodotrial.analytics.management.us2.oraclecloud.com/serviceapi/tm-data/associations \
+./files/collect_metrics.sh:41:  https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/metrics/ \
+./files/get_engine_name.py:11:get_entity = "https://uscgbuodotrial.analytics.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/"
+./files/add_odoenginedbinstance.sh:48:                        https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/$meId \
+./files/AgentInstall.sh:56:tenantId=uscgbuodotrial
+./files/add_odocampaign.sh:62:  		https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/metrics/ \
+./files/monitor_engine.sh:61: 				https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
+./templates/default/engine_down_status.py:12:put_entitystatus = "https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/"
+./templates/default/aggregate_campaign_metrics.py:14:post_base_entitymetriccurl = "https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/tm-data/mes/"
+./templates/default/assocs.py:24:get_campaignmeIdurl = 'https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/?entityName=' + campaignName + '&entityType=usr_odo_campaign'
+
+4. Create alert rules

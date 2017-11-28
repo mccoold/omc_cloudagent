@@ -8,13 +8,12 @@ mylist = []
 maxlist = 0
 
 # URLs and Headers
-get_entity = "https://uscgbuodotrial.analytics.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/"
+get_entity = "https://uscgbuodo2trial.analytics.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/"
 
 headers = {
     'content-type': "application/json",
     'authorization': "Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0",
-    'cache-control': "no-cache",
-    'postman-token': "d6f9b060-5326-24fd-a711-a2373ea4396f"
+    'cache-control': "no-cache"
     }
     
 r = requests.get(get_entity, headers=headers)

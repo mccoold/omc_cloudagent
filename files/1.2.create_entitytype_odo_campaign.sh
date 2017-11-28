@@ -1,19 +1,10 @@
-https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/tm-metadata/metypes
-
-{
-    "entityType": "usr_odo_campaign",
-    "category": "Applications",
-    "typeDisplayName": "ODO Campaign",
-    "parentTargetType": "omc_entity",
-    "meClass": "TARGET",
-    "propertyTypeList": [
-    ],
-    "tenantSpecific": true
-}
-
-
-
-{
+curl -X POST \
+  https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/metadata/entityTypes \
+  -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: aebd3a8c-9f1c-197f-1e9e-f464c2bc3f08' \
+  -d '{
     "entityType": "usr_odo_campaign",
     "category": "Applications",
     "typeDisplayName": "ODO Campaign",
@@ -127,4 +118,4 @@ https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/tm-metadat
     "propertyTypeList": [
     ],
     "tenantSpecific": true
-}
+}'

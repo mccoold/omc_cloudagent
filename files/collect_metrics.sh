@@ -38,19 +38,19 @@ $basedir/odoengine_capacity.sh
 $basedir/collect_status.sh
 
 curl -X POST \
-  https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/metrics/ \
+  https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/metrics/ \
   -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/octet-stream' \
   -d '@/home/oracle/scripts/odo/odoengine_metric_capacity.json'
 curl -X POST \
-  https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/$odoengine_meId/metricGroups \
+  https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/$odoengine_meId/metricGroups \
   -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -d '@/home/oracle/scripts/odo/odoengine_metric_ordersummary.json'
 curl -X POST \
-  https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/$odoengine_meId/metricGroups \
+  https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/$odoengine_meId/metricGroups \
   -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
@@ -58,25 +58,25 @@ curl -X POST \
 
 # Status Checks
 curl -X PUT \
-  https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
+  https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
   -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -d '@/home/oracle/scripts/odo/status_asap.json'
 curl -X PUT \
-  https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
+  https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
   -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -d '@/home/oracle/scripts/odo/status_dbinstance.json'
 curl -X PUT \
-  https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
+  https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
   -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -d '@/home/oracle/scripts/odo/status_odoengine.json'
 curl -X PUT \
-  https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
+  https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
   -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \

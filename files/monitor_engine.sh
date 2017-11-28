@@ -34,7 +34,7 @@ function checkCapacity {
             #echo "TODO: Set alert flag for engine in OMC as metric"
             #echo "TODO: Set alert message - $alert_message - for engine in OMC as metric"
 	    	curl -X POST \
-  				https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/metrics/ \
+  				https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/metrics/ \
   				-H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
   				-H 'cache-control: no-cache' \
   				-H 'content-type: application/octet-stream' \
@@ -58,7 +58,7 @@ function checkCapacity {
         
 	    #echo "TODO: Set engine name to <engine_name>_drain"
             curl -X PUT \
- 				https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
+ 				https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
   				-H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
   				-H 'cache-control: no-cache' \
   				-H 'content-type: application/json' \

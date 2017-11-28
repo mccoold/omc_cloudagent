@@ -34,25 +34,23 @@ echo "    \"agentBasedAvailability\": \"UP\""   >> $output
 echo "}"                                                                                >> $output
 
 meId=$(curl -X POST \
-  https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/tm-data/mes \
+  https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/tm-data/mes \
   -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
-  -H 'postman-token: b551b292-16a5-5e31-5c96-db63acbfcbbf' \
   -d '@/home/oracle/scripts/odo/odoengine.json' \
         | grep -o -P '(?<=\"meId\":\").*(?=\")')
 
 meName=$(curl -X GET \
-  https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/$meId \
+  https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/$meId \
   -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
-  -H 'postman-token: 054f36fd-aee3-b8ed-d04c-c334f8615601' \
         |  grep -o -P '(?<=\"entityName\":\").*(?=\",\"properties)')
 
 # Create an OMC group for this engine
 curl -X POST \
- https://uscgbuodotrial.analytics.management.us2.oraclecloud.com/serviceapi/tm-data/groups/ \
+ https://uscgbuodo2trial.analytics.management.us2.oraclecloud.com/serviceapi/tm-data/groups/ \
   -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \

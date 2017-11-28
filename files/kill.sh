@@ -21,11 +21,10 @@ rm -rf /var/spool/cron/oracle
 # curl command to mark DB down
 #
 curl -X PUT \
- https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
+ https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
   -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
-  -H 'postman-token: 42e7d718-24a9-ede4-ee14-cd7296fbe370' \
   -d '{
     "collectionTs" : "'"$mydate"'",
     "entityId": "'"${ary[odoenginedbinstance_meId]}"'",
@@ -40,11 +39,10 @@ curl -X PUT \
 # Curl Command to mark OSM down
 
 curl -X PUT \
- https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
+ https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
   -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
-  -H 'postman-token: 42e7d718-24a9-ede4-ee14-cd7296fbe370' \
   -d '{
     "collectionTs" : "'"$mydate"'",
     "entityId": "'"${ary[odoengineosm_meId]}"'",
@@ -60,11 +58,10 @@ curl -X PUT \
 # Curl for ASAP
 
 curl -X PUT \
- https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
+ https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
   -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
-  -H 'postman-token: 42e7d718-24a9-ede4-ee14-cd7296fbe370' \
   -d '{
     "collectionTs" : "'"$mydate"'",
     "entityId": "'"${ary[odoengineasap_meId]}"'",
@@ -78,11 +75,10 @@ curl -X PUT \
 #
 # Curl for Engine
 curl -X PUT \
- https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
+ https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
   -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
-  -H 'postman-token: 42e7d718-24a9-ede4-ee14-cd7296fbe370' \
   -d '{
     "collectionTs" : "'"$mydate"'",
     "entityId": "'"${ary[odoengine_meId]}"'",

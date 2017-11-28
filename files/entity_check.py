@@ -1,13 +1,13 @@
 import requests, json, datetime, sys
 
 thisentityId = 0
-get_base_entityurl = "https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/?entityName="
+get_base_entityurl = "https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/?entityName="
 
 headers = {
     'content-type': "application/json",
     'authorization': "Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0",
     'cache-control': "no-cache",
-    'postman-token': "d6f9b060-5326-24fd-a711-a2373ea4396f"
+    'postman-token': "9a476554-526c-61b9-5b94-d5fa420d8108"
     }
 
 get_entityurl = get_base_entityurl + sys.argv[1] + '&entityType=' + sys.argv[2]
