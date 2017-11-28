@@ -29,6 +29,6 @@ default['omc']['wlsmon'] = 'false'
 default['omc']['agent_base_dir'] = '/omc/cloud_agent'
 default['omc']['base_dir'] = '/omc'
 default['omc']['json_dir'] = '/omc/json'
-default['omc']['regkey'] = 'Rs30khSRjsimG3RTM8wNApUi4i'
+default['omc']['regkey'] = 'RF7eyGlELpZsSC78Cl8Z8MDtx4'
 # default['maven']['repositories'] = ['http://repo1.maven.apache.org/maven']
 # default['maven']['setup_bin'] = false
