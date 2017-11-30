@@ -27,7 +27,7 @@ else
         echo "    },"                                                                   >> $output
         echo "    \"tags\":{" >> $output
         echo "    \"campaign\" : \"$odocampaign_name\"," >> $output
-        echo "    \"campaign\" : \"$odoengine_name\"" >> $output
+        echo "    \"engine\" : \"$odoengine_name\"" >> $output
         echo "    },"                                                                   >> $output
         echo "    \"availabilityStatus\": \"UP\","              >> $output
         echo "    \"meClass\": \"TARGET\","                     >> $output

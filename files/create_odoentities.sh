@@ -23,7 +23,7 @@ curl -X POST \
         "groupType": "Dynamic",
         "tagBasedCriteria" : { "key":"campaign","value":"'"$odoengine_name"'" },
                 "tags" : {
-                        "campaign" : "'"$odoengine_name"'"
+                        "engine" : "'"$odoengine_name"'"
         }
 }'
 
