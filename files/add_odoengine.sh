@@ -48,22 +48,6 @@ meName=$(curl -X GET \
   -H 'content-type: application/json' \
         |  grep -o -P '(?<=\"entityName\":\").*(?=\",\"properties)')
 
-# Create an OMC group for this engine
-curl -X POST \
- https://uscgbuodo2trial.analytics.management.us2.oraclecloud.com/serviceapi/tm-data/groups/ \
-  -H 'authorization: Basic dXNjZ2J1b2RvMnRyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
-  -H 'cache-control: no-cache' \
-  -H 'content-type: application/json' \
-  -d '{
-	"groupName": "'"$entityname"'",
-	"groupDisplayName": "'"$entityname"'",
-	"groupType": "Dynamic",
-	"tagBasedCriteria" : { "key":"campaign","value":"'"$entityname"'" },
-		"tags" : {
-			"campaign" : "'"$entityname"'"
-    	}
-}'
-
 # Write variable to file - to be used later
 odomeIds=$basedir/odomeIds
 if [ -e "$odomeIds" ]; then
