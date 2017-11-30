@@ -21,9 +21,9 @@ curl -X POST \
         "groupName": "'"$odoengine_name"'",
         "groupDisplayName": "'"$odoengine_name"'",
         "groupType": "Dynamic",
-        "tagBasedCriteria" : { "key":"campaign","value":"'"$odoengine_name"'" },
+        "tagBasedCriteria" : { "key":"engine","value":"'"$odoengine_name"'" },
                 "tags" : {
-                        "engine" : "'"$odoengine_name"'"
+                        "campaign" : "'"$odoengine_name"'"
         }
 }'
 
