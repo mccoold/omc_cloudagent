@@ -1,6 +1,7 @@
 #!/bin/sh
 basedir=/home/oracle/scripts/odo
 entityname=$(hostname -s)_osm
+engine_name=$(hostname -s)_engine
 output=$basedir/odoengineosm.json
 source $basedir/odomeIds
 
@@ -27,7 +28,7 @@ else
         echo "    },"                                                                   >> $output
         echo "    \"tags\":{" >> $output
         echo "    \"campaign\" : \"$odocampaign_name\"," >> $output
-        echo "    \"engine\" : \"$odoengine_name\"" >> $output
+        echo "    \"engine\" : \"$engine_name\"" >> $output
         echo "    },"                                                                   >> $output
         echo "    \"availabilityStatus\": \"UP\","              >> $output
         echo "    \"meClass\": \"TARGET\","                     >> $output

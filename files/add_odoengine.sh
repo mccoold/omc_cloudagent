@@ -27,7 +27,7 @@ echo "    }" >> $output
 echo "    },"                                                                   >> $output
 echo "    \"tags\":{" >> $output
 echo "    \"campaign\" : \"$odocampaign_name\"," >> $output
-echo "    \"engine\" : \"$entityname\"" >> $output
+echo "    \"engine\" : \"$entitydisplayname\"" >> $output
 echo "    },"                                                                   >> $output
 echo "    \"availabilityStatus\": \"UP\","              >> $output
 echo "    \"meClass\": \"TARGET\","                     >> $output
