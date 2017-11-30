@@ -38,7 +38,7 @@ function checkCapacity {
   				-H 'authorization: Basic dXNjZ2J1b2RvMnRyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
   				-H 'cache-control: no-cache' \
   				-H 'content-type: application/octet-stream' \
-  				-d '{ 
+  				-d '[{ 
   					"entityName": "'"$odoengine_name"'",
   					"entityId": "'"$odoengine_meId"'",
         			"collectionTs": "'"$mydate"'",
@@ -52,7 +52,7 @@ function checkCapacity {
       				[
         				1,
         				"'"$alert_message"'"
-        			]]}'
+        			]]}]'
 
 	    # 
         

@@ -9,24 +9,40 @@
 	Campaign -> 2.2.import_odo_campaign_dashboard.html
 	Engine -> 2.3.import_odo_engine_dashboard.html
 
-3. Edit following scripts and replace references for uscgbuodotrial to uscgbuodo2trial
+3. Edit following scripts and replace references for 
+	3.a. uscgbuodo2trial to the new tenant
+	3.b. authorization tokens, for example "dXNjZ2J1b2RvMnRyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==" with a new one
 
-/files/entity_check.py:4:get_base_entityurl = "https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/?entityName="
-./files/kill.sh:24: https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
-./files/add_odoengineasap.sh:38:                        https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/tm-data/mes \
-./files/campaign_decommission_status.sh:6:curlCommand="curl -X GET 'https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/?entityName="$1"&entityType=usr_odo_campaign' -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: 14301df8-5a11-61a1-5aa1-370bc9adb018'"
-./files/add_odoengineosm.sh:48:                https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/$meId \
-./files/add_odoengine.sh:55: https://uscgbuodotrial.analytics.management.us2.oraclecloud.com/serviceapi/tm-data/groups/ \
-./files/add_associations.sh:7:curlCommand="curl -X GET 'https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/?entityName="$entityname"&entityType=usr_odo_campaign' -H 'authorization: Basic dXNjZ2J1b2RvdHJpYWwubWFhei5hbmp1bUBvcmFjbGUuY29tOlRlc3QhMjM0' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: 14301df8-5a11-61a1-5aa1-370bc9adb018'"
-./files/add_associations.sh:92:  https://uscgbuodotrial.analytics.management.us2.oraclecloud.com/serviceapi/tm-data/associations \
-./files/collect_metrics.sh:41:  https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/metrics/ \
-./files/get_engine_name.py:11:get_entity = "https://uscgbuodotrial.analytics.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/"
-./files/add_odoenginedbinstance.sh:48:                        https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/$meId \
-./files/AgentInstall.sh:56:tenantId=uscgbuodotrial
-./files/add_odocampaign.sh:62:  		https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/metrics/ \
-./files/monitor_engine.sh:61: 				https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
-./templates/default/engine_down_status.py:12:put_entitystatus = "https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/"
-./templates/default/aggregate_campaign_metrics.py:14:post_base_entitymetriccurl = "https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/tm-data/mes/"
-./templates/default/assocs.py:24:get_campaignmeIdurl = 'https://uscgbuodotrial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/?entityName=' + campaignName + '&entityType=usr_odo_campaign'
+--./files/entity_check.py:4
+--./files/kill.sh:24
+--./files/add_odoengineasap.sh:38
+--./files/campaign_decommission_status.sh:6
+--./files/add_odoengineosm.sh:48
+--./files/add_odoengine.sh:55
+--./files/add_associations.sh:7
+--./files/collect_metrics.sh:41
+--./files/get_engine_name.py:11
+--./files/add_odoenginedbinstance.sh:48
+--./files/AgentInstall.sh:56:tenantId=uscgbuodotrial
+--./files/add_odocampaign.sh:62
+--./files/monitor_engine.sh:61
+--./templates/default/engine_down_status.py
+--./templates/default/aggregate_campaign_metrics.py:14
+--./templates/default/assocs.py:24
 
 4. Create alert rules
+	ODO 
+
+5. Note new registration key:
+
+RF7eyGlELpZsSC78Cl8Z8MDtx4
+
+
+{
+	"groupName": "sometest",
+	"groupType": "Dynamic",
+    "members": [],
+    "tags" : {
+        "campaign" : "robinlaidanegg-0.0_engine"
+            }
+}
