@@ -26,14 +26,15 @@ function checkCapacity {
             touch $engine_drain_flag
 
 	    # Script to disable port forwarding
-            echo "TODO: Call method to turn off port forwarding"
-            alert_message="$alert_source is over capacity"
+            sudo iptables -D PREROUTING -t nat -i eth0 -p tcp --dport 8101 -j REDIRECT --to-port 8001
+	    alert_message="$alert_source is over capacity"
 
 	    # Mark engine metric group and/or properties to reflect new status with message
 	    # Property or metric is set to True for an email alert
-            #echo "TODO: Set alert flag for engine in OMC as metric"
-            #echo "TODO: Set alert message - $alert_message - for engine in OMC as metric"
-	    	curl -X POST \
+            # Set alert flag for engine in OMC as metric
+            # Set alert message - $alert_message - for engine in OMC as metric
+
+			    curl -X POST \
   				https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/metrics/ \
   				-H 'authorization: Basic dXNjZ2J1b2RvMnRyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
   				-H 'cache-control: no-cache' \
@@ -55,8 +56,7 @@ function checkCapacity {
         			]]}]'
 
 	    # 
-        
-	    #echo "TODO: Set engine name to <engine_name>_drain"
+            # Set engine name to <engine_name>_drain 
             curl -X PUT \
  				https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
   				-H 'authorization: Basic dXNjZ2J1b2RvMnRyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
