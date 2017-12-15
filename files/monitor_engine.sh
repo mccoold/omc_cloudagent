@@ -76,8 +76,8 @@ function checkCapacity {
 }
 
 function checkDrained {
-    inflight=`cat $basedir/odoengine_ordersummary.values | grep open_orders | cut -f2 -d=`
-    if [[ "$inflight" -eq 0 ]]; then
+      inflight=`cat $basedir/odoengine_metric_ordersummary.values | grep open_orders | cut -f2 -d=`
+      if [[ "$inflight" -eq 0 ]]; then
         echo "Engine is drained"
         #echo "TBD: Taint engine via Jenkins"
         /home/oracle/scripts/odo/taint.sh
