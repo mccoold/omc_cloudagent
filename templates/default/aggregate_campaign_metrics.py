@@ -15,7 +15,7 @@ post_base_entitymetriccurl = "https://uscgbuodo2trial.itom.management.us2.oracle
 
 headers = {
     'content-type': "application/json",
-    'authorization': "Basic dXNjZ2J1b2RvMnRyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==",
+    'authorization': "Basic dXNjZ2J1b2RvM3RyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==",
     'cache-control': "no-cache"
     }
 

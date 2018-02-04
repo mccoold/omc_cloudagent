@@ -22,7 +22,7 @@ rm -rf /var/spool/cron/oracle
 #
 curl -X PUT \
  https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
-  -H 'authorization: Basic dXNjZ2J1b2RvMnRyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
+  -H 'authorization: Basic dXNjZ2J1b2RvM3RyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -d '{
@@ -40,7 +40,7 @@ curl -X PUT \
 
 curl -X PUT \
  https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
-  -H 'authorization: Basic dXNjZ2J1b2RvMnRyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
+  -H 'authorization: Basic dXNjZ2J1b2RvM3RyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -d '{
@@ -59,7 +59,7 @@ curl -X PUT \
 
 curl -X PUT \
  https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
-  -H 'authorization: Basic dXNjZ2J1b2RvMnRyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
+  -H 'authorization: Basic dXNjZ2J1b2RvM3RyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -d '{
@@ -76,7 +76,7 @@ curl -X PUT \
 # Curl for Engine
 curl -X PUT \
  https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/ \
-  -H 'authorization: Basic dXNjZ2J1b2RvMnRyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
+  -H 'authorization: Basic dXNjZ2J1b2RvM3RyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -d '{
