@@ -8,7 +8,7 @@ mylist = []
 maxlist = 0
 
 # URLs and Headers
-get_entity = "https://uscgbuodo2trial.analytics.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/"
+get_entity = "https://uscgbuodo3trial.analytics.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/"
 
 headers = {
     'content-type': "application/json",

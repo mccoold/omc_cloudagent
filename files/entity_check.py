@@ -1,7 +1,7 @@
 import requests, json, datetime, sys
 
 thisentityId = 0
-get_base_entityurl = "https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/?entityName="
+get_base_entityurl = "https://uscgbuodo3trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/?entityName="
 
 headers = {
     'content-type': "application/json",

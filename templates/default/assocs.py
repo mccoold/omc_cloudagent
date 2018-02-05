@@ -20,7 +20,7 @@ headers = {
     'cache-control': "no-cache"
     }
 
-get_campaignmeIdurl = 'https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/?entityName=' + campaignName + '&entityType=usr_odo_campaign'
+get_campaignmeIdurl = 'https://uscgbuodo3trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/?entityName=' + campaignName + '&entityType=usr_odo_campaign'
 
 r = requests.get(get_campaignmeIdurl, headers=headers)
 campaignJson = r.json()

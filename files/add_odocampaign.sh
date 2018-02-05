@@ -29,7 +29,7 @@ if [ "$enginenumber" -lt "1" ]; then
         echo "}"                                                                                >> $output
 
         meId=$(curl -X POST \
-          https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/tm-data/mes \
+          https://uscgbuodo3trial.itom.management.us2.oraclecloud.com/serviceapi/tm-data/mes \
           -H 'authorization: Basic dXNjZ2J1b2RvM3RyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
           -H 'cache-control: no-cache' \
           -H 'content-type: application/json' \
@@ -37,7 +37,7 @@ if [ "$enginenumber" -lt "1" ]; then
                 | grep -o -P '(?<=\"meId\":\").*(?=\")')
 
         meName=$(curl -X GET \
-          https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/$meId \
+          https://uscgbuodo3trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/$meId \
           -H 'authorization: Basic dXNjZ2J1b2RvM3RyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
           -H 'cache-control: no-cache' \
           -H 'content-type: application/json' \
@@ -68,7 +68,7 @@ if [ "$enginenumber" -lt "1" ]; then
 		echo "    \"$(date)\"]]} " >> $output
 
 		curl -X POST \
-			https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/metrics/ \
+			https://uscgbuodo3trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/metrics/ \
 			-H 'authorization: Basic dXNjZ2J1b2RvM3RyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
 			-H 'cache-control: no-cache' \
 			-H 'content-type: application/octet-stream' \

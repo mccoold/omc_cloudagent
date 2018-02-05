@@ -48,12 +48,12 @@ UNZIP_ARGS=-o
 
 #TemplateVariables
 cksum="2225746965"
-alcEndPoint="https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/static/agentlifecycle"
-apmCollectorRoot="https://uscgbuodo2trial.itom2.management.us2.oraclecloud.com"
-ohEndPoint="https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/registry"
+alcEndPoint="https://uscgbuodo3trial.itom.management.us2.oraclecloud.com/static/agentlifecycle"
+apmCollectorRoot="https://uscgbuodo3trial.itom2.management.us2.oraclecloud.com"
+ohEndPoint="https://uscgbuodo3trial.itom.management.us2.oraclecloud.com/registry"
 #The OHS end point - https://host:port/
-UploadRoot="https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/"
-tenantId=uscgbuodo2trial
+UploadRoot="https://uscgbuodo3trial.itom.management.us2.oraclecloud.com/"
+tenantId=uscgbuodo3trial
 
 #Constants
 ABSENT="ABSENT"
