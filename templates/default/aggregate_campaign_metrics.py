@@ -84,6 +84,8 @@ for groupentry in group['items']:
       			]
     			]
 		}]
+#	print jsonData
 # 6: Upload these metric values to the group, i.e. campaign
 	post_entitymetriccurl = post_base_entitymetriccurl + campaignentityId + '/metricGroups'
 	r = requests.post(post_entitymetriccurl, headers=headers, json=jsonData, verify=True)
+	print post_entitymetriccurl
