@@ -37,16 +37,16 @@ else
 
 
         meId=$(curl -X POST \
-                https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/tm-data/mes \
-                -H 'authorization: Basic dXNjZ2J1b2RvMnRyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
+                https://uscgbuodo3trial.itom.management.us2.oraclecloud.com/serviceapi/tm-data/mes \
+                -H 'authorization: Basic dXNjZ2J1b2RvM3RyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
                 -H 'cache-control: no-cache' \
                 -H 'content-type: application/json' \
                 -d '@/home/oracle/scripts/odo/odoengineosm.json' \
                 | grep -o -P '(?<=\"meId\":\").*(?=\")')
 
         meName=$(curl -X GET \
-                https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/$meId \
-                -H 'authorization: Basic dXNjZ2J1b2RvMnRyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
+                https://uscgbuodo3trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/$meId \
+                -H 'authorization: Basic dXNjZ2J1b2RvM3RyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
                 -H 'cache-control: no-cache' \
                 -H 'content-type: application/json' \
                 |  grep -o -P '(?<=\"entityName\":\").*(?=\",\"properties)')

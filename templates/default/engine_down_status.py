@@ -7,13 +7,13 @@ from requests import ReadTimeout, ConnectTimeout, HTTPError, Timeout, Connection
 dateNow = (datetime.datetime.now()).strftime('%Y-%m-%dT%H:%M:%SZ')
 
 # URLs and Headers
-get_entity = "https://uscgbuodo2trial.analytics.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/"
-get_entitydetails = "https://uscgbuodo2trial.analytics.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/"
-put_entitystatus = "https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/"
+get_entity = "https://uscgbuodo3trial.analytics.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/"
+get_entitydetails = "https://uscgbuodo3trial.analytics.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/"
+put_entitystatus = "https://uscgbuodo3trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/"
 
 headers = {
     'content-type': "application/json",
-    'authorization': "Basic dXNjZ2J1b2RvMnRyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==",
+    'authorization': "Basic dXNjZ2J1b2RvM3RyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==",
     'cache-control': "no-cache"
     }
     

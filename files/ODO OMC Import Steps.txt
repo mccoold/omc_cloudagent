@@ -19,7 +19,8 @@
 --./files/campaign_decommission_status.sh:6
 --./files/add_odoengineosm.sh:48
 --./files/add_odoengine.sh:55
---./files/add_associations.sh:7
+--./files/add_associations.sh:
+--./files/create_odoentities.sh:
 --./files/collect_metrics.sh:41
 --./files/get_engine_name.py:11
 --./files/add_odoenginedbinstance.sh:48

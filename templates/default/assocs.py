@@ -16,11 +16,11 @@ print 'campaignName:', campaignName
 
 headers = {
     'content-type': "application/json",
-    'authorization': "Basic dXNjZ2J1b2RvMnRyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==",
+    'authorization': "Basic dXNjZ2J1b2RvM3RyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==",
     'cache-control': "no-cache"
     }
 
-get_campaignmeIdurl = 'https://uscgbuodo2trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/?entityName=' + campaignName + '&entityType=usr_odo_campaign'
+get_campaignmeIdurl = 'https://uscgbuodo3trial.itom.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/?entityName=' + campaignName + '&entityType=usr_odo_campaign'
 
 r = requests.get(get_campaignmeIdurl, headers=headers)
 campaignJson = r.json()

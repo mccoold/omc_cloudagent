@@ -8,11 +8,11 @@ mylist = []
 maxlist = 0
 
 # URLs and Headers
-get_entity = "https://uscgbuodo2trial.analytics.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/"
+get_entity = "https://uscgbuodo3trial.analytics.management.us2.oraclecloud.com/serviceapi/entityModel/data/entities/"
 
 headers = {
     'content-type': "application/json",
-    'authorization': "Basic dXNjZ2J1b2RvMnRyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==",
+    'authorization': "Basic dXNjZ2J1b2RvM3RyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==",
     'cache-control': "no-cache"
     }
     

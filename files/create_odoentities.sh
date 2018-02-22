@@ -14,8 +14,8 @@ source $basedir/odomeIds
 engine_name=$(hostname -s)_engine
 
 curl -X POST \
- https://uscgbuodo2trial.analytics.management.us2.oraclecloud.com/serviceapi/tm-data/groups/ \
-  -H 'authorization: Basic dXNjZ2J1b2RvMnRyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
+ https://uscgbuodo3trial.analytics.management.us2.oraclecloud.com/serviceapi/tm-data/groups/ \
+  -H 'authorization: Basic dXNjZ2J1b2RvM3RyaWFsLm1hYXouYW5qdW1Ab3JhY2xlLmNvbTpUZXN0ITIzNA==' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -d '{
